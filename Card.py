@@ -116,6 +116,17 @@ class Card:
         c.PT = d['pt']
         return c
 
+    # return the converted mana cost of a card.
+    # if the cost contains X, the return will be -1
+    def get_converted_mana_cost(self):
+        tp = self.manaCost
+        tot = 0
+        for ty in tp:
+            tot += tp[ty]
+            if ty == 'X' and tp[ty] != 0:
+                tot = -1
+                break
+        return tot
 
 # use this to convert the text with rules deleting images of mana
 # and raplacing it with literals such as {4}{U} and deleting formatted text
@@ -158,5 +169,3 @@ def generate_types():
     for a in ret:
         dict[a] = 0
     return dict
-
-
