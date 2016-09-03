@@ -15,5 +15,6 @@ Actually the Gatherer project need:
 - Add option for crating/menaging decks
 - Add deck analyzer
 - Add a space for testing decks
+- Start writing the Wiki
 
 ***Thank you***
